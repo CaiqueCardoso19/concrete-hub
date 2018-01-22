@@ -1,0 +1,16 @@
+
+<article *ngIf="user">
+  <mat-card>
+    <p class="center">
+      <span><img  class="photo-space radius-2"
+                  alt="{{user?.name}} avatar"
+                  [src]="user.avatar_url != null ? user?.avatar_url : dummyImg">
+      </span>
+      <span class="profile-name m-t-15-b-10"> {{user?.login}}</span>
+      <span> {{user?.email}}</span>
+      <span> _followers: {{user?.followers}}</span>
+      <span> _following: {{user?.following}}</span>
+      <span class="bio"> {{user?.bio}}</span>
+    </p>
+  </mat-card>
+</article>

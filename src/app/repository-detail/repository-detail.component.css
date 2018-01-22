@@ -1,0 +1,36 @@
+
+.fixedbutton {
+	position: fixed;
+	bottom: 0px; 
+}
+
+.right {
+	right: 0px;	
+}
+
+.left {
+	left: 0px;
+}
+
+.center {
+	text-align: center;
+}
+
+.block { 
+	display: block;
+}
+
+.fullname {
+	font-size: 19px;
+	font-weight: bold;
+	color:  rgb(26, 25, 25);
+}
+
+p span {
+	display: block;
+}	
+
+.description {
+	text-align: center;
+	padding-top: 30px
+}

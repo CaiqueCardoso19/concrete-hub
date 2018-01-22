@@ -1,0 +1,25 @@
+<section>
+  <mat-card>
+    <form class="left" #searchForm="ngForm" (submit)="getUser(); $event.preventDefault()">
+      <mat-form-field>
+        <input  type="text"
+                name="search"
+                placeholder="what user are you looking for?"
+                [(ngModel)]="search"
+                [value]="search"
+                matInput>
+      </mat-form-field>
+      <button type="submit" class="button-black m-l-15" mat-button>
+        <span>Search</span>
+      </button>
+    </form>
+  </mat-card>
+</section>
+
+<section>
+  <app-perfil-presentation [user]="user"></app-perfil-presentation>
+</section>
+
+<section>
+  <app-repository-list [repositorys]="repositorys"></app-repository-list>
+</section>

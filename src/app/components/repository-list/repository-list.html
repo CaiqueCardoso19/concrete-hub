@@ -1,0 +1,15 @@
+
+<mat-card id="repositorys" *ngIf="repositorys.length > 0">
+  <button (click)="orderByStars()" mat-button> Order by stars </button>
+  <mat-nav-list>
+    <mat-list-item 
+      *ngFor="let repository of repositorys"
+      [routerLink]="['/repository-detail', repository?.owner.login, repository?.name]" 
+      routerLinkActive="active"     
+    >
+      <a matLine>  {{repository?.name}}</a>
+      <span class="fa fa-star checked star-icon"></span>
+      <p class="star-count">{{repository?.stargazers_count}}</p>
+    </mat-list-item>
+  </mat-nav-list>
+</mat-card>
