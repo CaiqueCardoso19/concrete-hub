@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { ServiceUtil } from '../shared/service';
+import { not } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,11 @@ import { ServiceUtil } from '../shared/service';
 })
 export class HomeComponent implements OnInit {
 
-  search: String = 'caiquecardoso19';
+  search: String = '';
   user: Array<Object>;
   repositorys: Array<Object> = [];
   repository: any;
-
+  notFound: boolean;
   constructor(private service: ServiceUtil) { }
 
   ngOnInit() {
@@ -27,8 +28,11 @@ export class HomeComponent implements OnInit {
         .getUser(this.search)
         .subscribe(data => {
           this.user = data;
+          this.notFound = false;
           return this.getRepositorys(data.repos_url);
-        });
+        },
+          err => this.notFound = true
+        );
   }
 
   private getRepositorys(url) {

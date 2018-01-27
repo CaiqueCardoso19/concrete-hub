@@ -16,6 +16,10 @@
   </mat-card>
 </section>
 
+<mat-card class="m-t-10" *ngIf="notFound">
+  Sorry, user not found.
+</mat-card>
+
 <section>
   <app-perfil-presentation [user]="user"></app-perfil-presentation>
 </section>
