@@ -8,8 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 
 export class PerfilPresentationComponent {
-  constructor() {
-    console.log('chegou presentation');
-  }
+  constructor() { }
   @Input() user;
 }
